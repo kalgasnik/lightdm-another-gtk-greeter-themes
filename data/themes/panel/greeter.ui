@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Fri Nov 22 22:07:36 2013 -->
+<!-- Generated with glade 3.16.0 on Tue Nov 26 11:44:55 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.6 -->
   <object class="GtkImage" id="image1">
@@ -159,16 +159,12 @@
                       <object class="GtkEventBox" id="message_box">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="hexpand">True</property>
-                        <property name="vexpand">True</property>
                         <child>
                           <object class="GtkLabel" id="message_widget">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" comments="This is a placeholder string and will be replaced with a message from PAM">[message]</property>
-                            <attributes>
-                              <attribute name="style" value="italic"/>
-                            </attributes>
+                            <property name="margin_right">10</property>
+                            <property name="label">[message]</property>
                           </object>
                         </child>
                       </object>
