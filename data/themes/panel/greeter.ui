@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.0 on Tue Nov 26 11:44:55 2013 -->
+<!-- Generated with glade 3.16.0 on Fri Dec 27 12:43:09 2013 -->
 <interface>
   <!-- interface-requires gtk+ 3.6 -->
   <object class="GtkImage" id="image1">
@@ -21,7 +21,7 @@
     <columns>
       <!-- column-name code -->
       <column type="gchararray"/>
-      <!-- column-name display_name -->
+      <!-- column-name display-name -->
       <column type="gchararray"/>
     </columns>
   </object>
@@ -83,6 +83,28 @@
                     <property name="halign">start</property>
                     <property name="spacing">6</property>
                     <child>
+                      <object class="GtkMenuButton" id="languages_widget">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="valign">center</property>
+                        <property name="relief">none</property>
+                        <property name="popup">languages_menu</property>
+                        <child>
+                          <object class="GtkImage" id="image3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="icon_name">preferences-desktop-locale-symbolic</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
                       <object class="GtkMenuButton" id="sessions_widget">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -102,29 +124,53 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">0</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkMenuButton" id="languages_widget">
+                      <object class="GtkBox" id="users_box">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="valign">center</property>
-                        <property name="relief">none</property>
-                        <property name="popup">languages_menu</property>
+                        <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkImage" id="image3">
+                          <object class="GtkMenuButton" id="users_widget">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <property name="relief">none</property>
+                            <property name="popup">users_menu</property>
+                            <child>
+                              <object class="GtkLabel" id="label1">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label">[users]</property>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="label2">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon_name">preferences-desktop-locale-symbolic</property>
+                            <property name="label">&gt;</property>
                           </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
                         </child>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">1</property>
+                        <property name="position">2</property>
                       </packing>
                     </child>
                     <child>
@@ -136,7 +182,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">2</property>
+                        <property name="position">3</property>
                       </packing>
                     </child>
                     <child>
@@ -152,7 +198,7 @@
                       <packing>
                         <property name="expand">True</property>
                         <property name="fill">True</property>
-                        <property name="position">3</property>
+                        <property name="position">4</property>
                       </packing>
                     </child>
                     <child>
@@ -171,7 +217,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">4</property>
+                        <property name="position">5</property>
                       </packing>
                     </child>
                   </object>
@@ -478,7 +524,7 @@
     <columns>
       <!-- column-name name -->
       <column type="gchararray"/>
-      <!-- column-name display_name -->
+      <!-- column-name display-name -->
       <column type="gchararray"/>
       <!-- column-name image -->
       <column type="GdkPixbuf"/>
@@ -490,20 +536,26 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
   </object>
+  <object class="GtkMenu" id="users_menu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+  </object>
   <object class="GtkListStore" id="users_model">
     <columns>
       <!-- column-name name -->
       <column type="gchararray"/>
       <!-- column-name type -->
       <column type="gint"/>
-      <!-- column-name display_name -->
+      <!-- column-name display-name -->
       <column type="gchararray"/>
       <!-- column-name weight -->
       <column type="gint"/>
       <!-- column-name image -->
       <column type="GdkPixbuf"/>
-      <!-- column-name image_scaled -->
+      <!-- column-name image-scaled -->
       <column type="GdkPixbuf"/>
+      <!-- column-name logged-in -->
+      <column type="gboolean"/>
     </columns>
   </object>
 </interface>
